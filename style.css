@@ -18,6 +18,8 @@ body{
     background-size: cover;
 }
 
+u{text-decoration: underline;}
+
 nav{
     height: 50px;
     width: 100%;
@@ -155,7 +157,7 @@ transition: 500ms;
     top: -100%;
     left: 0;
     text-align: center;
-    padding: 200px 10px 0;
+    padding: 150px 10px 0;
     color: white;
     transition: 800ms ease-in-out;
     opacity:0;
@@ -164,6 +166,16 @@ transition: 500ms;
 #success .fa-check-circle{
     font-size: 5em;
     margin: 30px 0;
+}
+
+#success p{
+    font-size: 12px;
+}
+
+#success span{
+    font-weight: 900;
+    font-size: 1.2em;
+    color: rgba(0,0,0,0.5);
 }
 
 .fa-times-circle{

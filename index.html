@@ -116,8 +116,14 @@
             <!-- Success Message Div start -->
             <div class="success" id="success">
                 <i class="fas fa-check-circle"></i>
-                <h2>Booking Successful</h2>
-                <p>Please check your email for E-Voucher</p>
+                <h2>Booking Successful</h2><br>
+                <p>
+                    Total  Seat <u>First Class <span id="first-class">0</span></u> and <u>Economy Class <span id="economy-class">0</span></u><br>
+                    AND<br>You have charged <u>Total <span id="total-price">0</span> </u>
+                </p><br><br>
+                <p>
+                    Please check your email for E-Voucher
+                </p>
                 <h5>Thank You</h5>
                 <i title="close" class="far fa-times-circle" id="close"></i>
             </div>
@@ -169,8 +175,23 @@
         //Success Message Show
         function success(){
             const success=document.getElementById('success');
-            success.style.top="0";
-            success.style.opacity="1";
+            const firstClass=document.getElementById('first-class');
+            const economyClass=document.getElementById('economy-class');
+            const totalPrice=document.getElementById('total-price');
+            const total=document.getElementById('total').innerText;
+
+            //Validation for empty fields
+            if(total>=100){
+                success.style.top="0";
+                success.style.opacity="1";
+                firstClass.innerText=document.getElementById('first-qnty').value;
+                economyClass.innerText=document.getElementById('economy-qnty').value;
+                totalPrice.innerText='$'+total;
+            }else{
+                //alert if empty
+                alert("OOPS!! Please select Minimum One seat and then confirm BOOKING");
+            }
+            
             
 
         }
@@ -190,12 +211,6 @@
             
         });
 
-        
-
-
-
-        
-        
     </script>
 </body>
 
